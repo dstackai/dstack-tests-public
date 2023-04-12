@@ -1,0 +1,8 @@
+workflows:
+  - name: hello-txt
+    help: "This workflow prints 'Hello, world!' to `output/hello.txt` and saves it as an artifact"
+    provider: bash
+    commands:
+      - echo "Hello, world!" > output/hello.txt
+    artifacts:
+      - path: ./output

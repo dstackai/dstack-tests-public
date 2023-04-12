@@ -1,0 +1,9 @@
+workflows:
+  - name: cat-txt-2
+    help: "This workflows displays the contents of the `output/hello.txt` file from the `hello-txt` workflow.
+           Make sure to run the `hello-txt` workflow beforehand."
+    provider: bash
+    deps:
+      - workflow: hello-txt
+    commands:
+      - cat output/hello.txt
