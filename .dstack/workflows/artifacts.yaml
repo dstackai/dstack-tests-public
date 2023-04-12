@@ -6,3 +6,17 @@ workflows:
       - echo "Hello, world!" > output/hello.txt
     artifacts:
       - path: ./output
+
+  - name: artifacts-ls
+    provider: bash
+    commands:
+      - mkdir -p dir1/dir12/
+      - mkdir -p dir2/dir22/
+      - echo "1" > dir1/dir12/1.txt
+      - echo "1" > dir1/dir12/11.txt
+      - echo "2" > dir2/2.txt
+      - echo "2" > dir2/dir22/2.txt
+      - echo "2" > dir2/dir22/22.txt
+    artifacts:
+      - path: ./dir1
+      - path: ./dir2/dir22/
